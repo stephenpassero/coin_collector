@@ -16,6 +16,12 @@ class CoinCollector
 
   def sort()
     arr_of_coins = []
-    arr_of_coins.push(sort_for_group(25).to_s + " Quarter(s)")
+    if @cents >= 25
+      arr_of_coins.push(sort_for_group(25).to_s + " Quarter(s)")
+    end
+    if @cents >= 10
+      arr_of_coins.push(sort_for_group(10).to_s + " Dime(s)")
+    end
+    arr_of_coins
   end
 end
