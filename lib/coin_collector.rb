@@ -25,6 +25,9 @@ class CoinCollector
     if @cents >= 5
       arr_of_coins.push(sort_for_group(5).to_s + " Nickel(s)")
     end
+    if @cents >= 1
+      arr_of_coins.push(sort_for_group(1).to_s + " Penny(s)")
+    end
     arr_of_coins
   end
 end

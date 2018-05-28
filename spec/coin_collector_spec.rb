@@ -17,4 +17,8 @@ describe("#coin_collector") do
     expect(coin_collector.sort()).to eq(["1 Nickel(s)"])
   end
 
+  it("should return the correct number of pennies") do
+    coin_collector = CoinCollector.new(4)
+    expect(coin_collector.sort()).to eq(["4 Penny(s)"])
+  end
 end
