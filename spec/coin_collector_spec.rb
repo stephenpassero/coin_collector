@@ -11,4 +11,10 @@ describe("#coin_collector") do
     coin_collector = CoinCollector.new(20)
     expect(coin_collector.sort()).to eq(["2 Dime(s)"])
   end
+
+  it("should return the correct number of nickels") do
+    coin_collector = CoinCollector.new(5)
+    expect(coin_collector.sort()).to eq(["1 Nickel(s)"])
+  end
+
 end
