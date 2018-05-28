@@ -1,14 +1,21 @@
 require("pry")
 
 class CoinCollector
-  def sort(cents)
+  def initialize(cents)
     @cents = cents
-    arr_of_coins = []
+  end
+
+  def sort_for_group(coin_value)
     counter = 0
-    while(@cents >= 25) do
+    while(@cents >= coin_value) do
       counter += 1
-      @cents -= 25
+      @cents -= coin_value
     end
-    arr_of_coins.push(counter.to_s + " Quarter(s)")
+    counter
+  end
+
+  def sort()
+    arr_of_coins = []
+    arr_of_coins.push(sort_for_group(25).to_s + " Quarter(s)")
   end
 end
